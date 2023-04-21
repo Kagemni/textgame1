@@ -1,0 +1,21 @@
+import random
+
+
+def guessingGame():
+    randomNumber = random.randint(1,100)
+    guessCounter = 0
+    print ("Hey, let's play a guessing game \n Pick a number between 1-100, and i'll tell you \n higher or lower! Get it in as few guesses as possible!")
+
+    
+    while True:
+        userGuess = int(input("What's your guess?"))
+        guessCounter +=1
+        if userGuess < randomNumber:
+            print ("Higher!")
+        elif userGuess > randomNumber:
+            print ("Lower!")
+        else:
+            print ("YOU WIN! It took you", guessCounter, "guesses!")
+            break
+
+guessingGame()
