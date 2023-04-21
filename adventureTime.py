@@ -2,19 +2,19 @@
 
 
 class mobs:
-    def __init__(self, name: str, health: int, attack: int, defense: int):
+    def __init__(self, name: str, health: int, attack: int, defense: int) -> None:
         self.name = name
         self.health = health
         self.attack = attack
         self.defense = defense
 
-    def damageTaken(self,damage):
+    def damageTaken(self,damage: int) -> None:
         self.health -= damage
         
         if self.health <= 0:
             print (self.name, "has been slain")
 
-    def damageDealt(self,target):
+    def damageDealt(self,target: int) -> None:
         print(self.name, "has attacked you for", self.attack, "damage.")
         target.take_damage(self.attack) #idk if this will work
 
@@ -30,7 +30,7 @@ class ogre(mobs):
 class dragon(mobs): """
 
 class dungeonLevel:
-    def __init__(self, floor: int, mobs: str):
+    def __init__(self, floor: int, mobs: str) -> None:
         self.floor = floor
         self.mobs = mobs
     def getMobs(self):
